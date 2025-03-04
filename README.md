@@ -85,9 +85,10 @@ International students often face difficulties managing their finances, particul
 
 To get started, ensure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (v18 or higher)
+- [Node.js](https://nodejs.org/) (v16.3.0 or higher)
 - [Angular CLI](https://angular.io/cli)
 - [Firebase CLI](https://firebase.google.com/docs/cli)
+- [Compatibility Check for Angular 14](https://stackoverflow.com/questions/60248452/is-there-a-compatibility-list-for-angular-angular-cli-and-node-js)
 
 ### Clone the Repository
 
@@ -243,6 +244,8 @@ This will create a `dist/` folder with the optimized build files.
 
 
 ## API References
+
+- Base URL: https://expenses-tracker-system-default-rtdb.firebaseio.com
 
 ### 1. Expenses Management:
 ```json
