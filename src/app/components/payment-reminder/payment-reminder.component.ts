@@ -95,7 +95,7 @@ export class PaymentReminderComponent implements OnInit {
       username: this.userDetails?.firstName,
       from_name: 'Expense Tracker System',
       to_email: localStorage.getItem('username') || '',
-      payment_link: "https://expenses-tracker-and-visualizer.vercel.app/login"
+      payment_link: "https://student-expense-tracking-system.vercel.app/login"
     };
 
     emailjs
