@@ -1,0 +1,102 @@
+<div class="import-expenses-container mt-2">
+    <div class="scrollable-container">
+        <h2 class="mb-1">{{ 'IMPORT_EXPENSES' | translate }}</h2>
+
+        <!-- Hint for CSV format -->
+        <div class="csv-format-hint">
+            <p class="mb-1" class="themeColor">{{ 'CSV_FORMAT_HINT' | translate }}</p>
+            <table class="csv-format-table">
+                <thead>
+                    <tr>
+                            <th class="text-white themebgColor">{{ 'FIELD' | translate }}</th>
+                            <th class="text-white themebgColor">{{ 'FIELD_HEADER' | translate }}</th>
+                            <th class="text-white themebgColor">{{ 'FORMAT_REQUIREMENT' | translate }}</th>
+                        </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ 'EXPENSE_NAME' | translate }}</td>
+                        <td>name</td>
+                        <td>{{ 'NAME_REQUIRED' | translate }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ 'CURRENCY_TYPE' | translate }}</td>
+                        <td>currency</td>
+                        <td>{{ 'CURRENCY_REQUIRED' | translate }}. {{ 'ACCEPTABLE_FORMAT' | translate }}: USD, Euro, GBP, INR</td>
+                    </tr>
+                    <tr>
+                        <td>{{ 'TOTAL_AMOUNT' | translate }}</td>
+                        <td>totalAmount</td>
+                        <td>{{ 'AMOUNT_REQUIRED' | translate }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ 'TAX_AMOUNT' | translate }}</td>
+                        <td>taxAmount</td>
+                        <td>{{ 'TAX_REQUIRED' | translate }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ 'EXPENSE_CATEGORY' | translate }}</td>
+                        <td>category</td>
+                        <td>{{ 'NOT_REQUIRED' | translate }}. {{ 'DEFAULT_UNASSIGNED' | translate }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ 'EXPENSE_DATE' | translate }}</td>
+                        <td>date</td>
+                        <td>{{ 'REQUIRED_FORMAT' | translate }}: MM/DD/YYYY</td>
+                    </tr>
+                    <tr>
+                        <td>{{ 'PAYMENT_TYPE' | translate }}</td>
+                        <td>paymentType</td>
+                        <td>{{ 'NOT_REQUIRED' | translate }}. {{ 'DEFAULT_DEBIT' | translate }}. {{ 'VALID_VALUES' | translate }}: Debit, Credit, or Cash</td>
+                    </tr>
+                    <tr>
+                        <td>{{ 'COMMENTS' | translate }}</td>
+                        <td>comments</td>
+                        <td>{{ 'NOT_REQUIRED' | translate }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="file-upload-container">
+            <label for="csvFile">{{ 'SELECT_CSV_FILE' | translate }}</label>
+            <input type="file" id="csvFile" (change)="onFileChange($event)" style="color: brown;" accept=".csv" />
+        </div>
+
+        <!-- Display errors if any -->
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+        <!-- Show imported expenses -->
+        <table *ngIf="importedExpenses.length > 0" class="table">
+            <thead>
+                <tr>
+                    <th class="text-white themebgColor">{{ 'EXPENSE_NAME' | translate }}</th>
+                    <th class="text-white themebgColor">{{ 'CURRENCY' | translate }}</th>
+                    <th class="text-white themebgColor">{{ 'TOTAL_AMOUNT' | translate }}</th>
+                    <th class="text-white themebgColor">{{ 'TAX_AMOUNT' | translate }}</th>
+                    <th class="text-white themebgColor">{{ 'EXPENSE_CATEGORY' | translate }}</th>
+                    <th class="text-white themebgColor">{{ 'EXPENSE_DATE' | translate }}</th>
+                    <th class="text-white themebgColor">{{ 'PAYMENT_TYPE' | translate }}</th>
+                    <th>{{ 'COMMENTS' | translate }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let expense of importedExpenses">
+                    <td>{{ expense.name }}</td>
+                    <td>{{ expense.currency }}</td>
+                    <td>{{ expense.totalAmount }}</td>
+                    <td>{{ expense.taxAmount }}</td>
+                    <td>{{ expense.category }}</td>
+                    <td>{{ expense.date | date: 'dd-MM-yyyy' }}</td>
+                    <td>{{ expense.paymentType }}</td>
+                    <td>{{ expense.comments }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Save Button -->
+        <button class="btn" (click)="saveImportedExpenses()" *ngIf="importedExpenses.length > 0">
+            {{ 'SAVE_IMPORTED_EXPENSES' | translate }}
+        </button>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: block;
+  }
+  
+  .dropdown-item {
+    padding: 8px 16px;
+    cursor: pointer;
+    color: white;
+  }
+  

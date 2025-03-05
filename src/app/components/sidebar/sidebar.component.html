@@ -1,0 +1,46 @@
+<div *ngIf="!toggleChanged" class="sidebar">
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/dashboard" target="_self">
+                <span class="nav-text text-white themebgColor" style="padding: 4px; border-radius: 4px;">
+                    {{ 'HOME' | translate }}
+                </span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/view-expenses" target="_self">
+                <span class="nav-text text-white themebgColor" style="padding: 4px; border-radius: 4px;" >
+                    {{ 'VIEW_EXPENSES' | translate }}
+                </span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/addexpense" target="_self">
+                <span class="nav-text text-white themebgColor" style="padding: 4px; border-radius: 4px;">
+                    {{ 'ADD_EXPENSES' | translate }}
+                </span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/remainders" target="_self">
+                <span class="nav-text text-white themebgColor" style="padding: 4px; border-radius: 4px;">
+                    {{ 'ADD_REMINDERS' | translate }}
+                </span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/advices" target="_self">
+                <span class="nav-text text-white themebgColor" style="padding: 0px; border-radius: 4px;">
+                    {{ 'FINANCIAL_ADVICE' | translate }}
+                </span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/login" target="_self">
+                <span class="nav-text text-white themebgColor" style="padding: 4px; border-radius: 4px;">
+                    {{ 'LOGOUT' | translate }}
+                </span>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -69,6 +69,7 @@ International students often face difficulties managing their finances, particul
 | 13  | **Multi-Currency Support** | Supports expenses in multiple currencies for international students.        |
 | 14  | **Tax Tracking**         | Tracks and analyzes taxes on student purchases.                              |
 | 15  | **Financial Advice**     | Provides students with budget management tips and financial advice.         |
+| 16  | **Language Transulation**     | Allows students to view and perform operations in our website in multiple languages like English, Spanish.         |
 
 ### Non-Functional Features
 

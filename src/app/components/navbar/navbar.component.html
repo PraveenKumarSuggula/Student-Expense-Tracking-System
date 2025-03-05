@@ -1,0 +1,51 @@
+<!-- Topbar Navbar -->
+<nav class="navbar navbar-expand navbar-light themebgColor topbar mb-4 static-top shadow" style="max-height: 11vh;">
+    <div class="sidebar-brand-icon-a" (click)="toggleMenu()">
+        <em class="fa-solid fa-bars fa-xl mx-3" style="color: #ffffff;"></em>
+    </div>
+    <div class="container-fluid">
+
+        <!-- Left elements (Logo and Search) -->
+        <div class="d-flex">
+            <img style="width:36%; cursor: pointer;" src="../../../assets/images/logo.png" routerLink="/dashboard"
+                Alt="Expense Tracker System">
+            <form class="input-group w-auto my-auto d-none d-sm-flex mx-5">
+                <input autocomplete="off" type="search" class="form-control" placeholder="Search"
+                    style="min-width: 125px;" />
+                <span class="input-group-text border-0 d-none d-lg-flex cursor bg-white themeColor">
+                    <em class="fa fa-search"></em>
+                </span>
+            </form>
+        </div>
+
+        <ul class="navbar-nav ms-auto d-flex align-items-center">
+            <!-- Language Dropdown -->
+            <li class="nav-item dropdown ms-3">
+                <!-- Language Toggle -->
+                <a
+                  class="nav-link text-white"
+                  (click)="toggleDropdown()"
+                  style="padding: 10px; border-radius: 5px; cursor: pointer;">
+                  Language
+                </a>
+                
+                <!-- Dropdown Menu (only shown if isDropdownOpen is true) -->
+                <ul *ngIf="isDropdownOpen" class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" (click)="changeLanguage('en')">English</a></li>
+                  <li><a class="dropdown-item" (click)="changeLanguage('es')">Spanish</a></li>
+                </ul>
+              </li>              
+
+
+            <li class="nav-item dropdown profile-container ms-3">
+                <a class="nav-link d-sm-flex align-items-sm-center" target="_self">
+                    <strong class="d-none d-sm-block ms-1 text-white" style="padding: 4px; border-radius: 4px;">
+                        {{this.userDetails?.firstName}}
+                    </strong>
+                    <img src="../../../assets/images/profile_picture.png" class="rounded-circle" height="35"
+                        Alt="Profile Picture" />
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,26 @@
+.sidebar {
+    height: 89vh;
+    padding: 15px 15px;
+    max-width: 217px;
+}
+
+.nav-item {
+    margin: 7px 0px;
+}
+
+.nav-link {
+    font-size: 17px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-text {
+    flex: 1;
+    margin: 5px 10px;
+}

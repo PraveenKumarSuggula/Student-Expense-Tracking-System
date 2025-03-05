@@ -1,0 +1,21 @@
+<h1 class="text-left font-weight-bold text headertxt mx-4" class="themeColor">
+  {{ 'WELCOME' | translate }} {{ this.userDetails?.firstName }} !!
+</h1>
+
+<div class="container-class-1" *ngIf="showNoExpenses; else expensesList">
+    <img class="class-2" src="../../../assets/images/TasksList.png" alt="Tasks">
+    <div class="class-3 d-flex flex-column">
+        <h2 class="themeColor">{{ 'NO_EXPENSES' | translate }}!</h2>
+        <p>{{ 'ADD_EXPENSE' | translate }}</p>
+        <input 
+            type="submit" 
+            value="+ {{ 'ADD_EXPENSES' | translate | titlecase }}" 
+            class="btn btn-block btn-primary themebgColor border-0"
+            (click)="AddExpenses()" 
+        />
+    </div>
+</div>
+
+<ng-template #expensesList>
+    <app-view-expenses></app-view-expenses>
+</ng-template>

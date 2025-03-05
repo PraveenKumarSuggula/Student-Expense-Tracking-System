@@ -1,0 +1,304 @@
+.cursor {
+  cursor: pointer !important;
+}
+
+.overflowAuto {
+  overflow: auto;
+}
+
+.text-white {
+  color: white !important;
+}
+
+.themeColor {
+  color: rgb(0, 102, 204) !important;
+}
+
+.themebgColor {
+  background: rgb(0, 102, 204) !important;
+}
+
+.floatLeft {
+  float: left;
+}
+
+.floatright {
+  float: right;
+}
+
+// login and register page styles -- start
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #fff;
+}
+
+p {
+  color: #b3b3b3;
+  font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+a:hover {
+  text-decoration: none !important;
+}
+
+.content {
+  padding: 7rem 0;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.half,
+.half .container > .row {
+  height: 100vh;
+  min-height: 700px;
+}
+
+@media (max-width: 991.98px) {
+  .half .bg {
+    height: 200px;
+  }
+}
+
+.half .contents {
+  background: #f6f7fc;
+}
+
+.half .contents,
+.half .bg {
+  width: 50%;
+}
+@media (max-width: 1199.98px) {
+  .half .contents,
+  .half .bg {
+    width: 100%;
+  }
+}
+.half .contents .form-control,
+.half .bg .form-control {
+  border: none;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  height: 54px;
+  background: #fff;
+}
+.half .contents .form-control:active,
+.half .contents .form-control:focus,
+.half .bg .form-control:active,
+.half .bg .form-control:focus {
+  outline: none;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.half .bg {
+  background-size: cover;
+  background-position: center;
+}
+
+.half a {
+  color: #888;
+  text-decoration: underline;
+}
+
+.half .btn {
+  height: 54px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.half .forgot-pass {
+  position: relative;
+  top: 2px;
+  font-size: 14px;
+}
+
+.cursor{
+  cursor: pointer;
+}
+
+.control {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.control .caption {
+  position: relative;
+  top: 0.2rem;
+  color: #888;
+}
+
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.control__indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #e6e6e6;
+  border-radius: 4px;
+}
+
+.control--radio .control__indicator {
+  border-radius: 50%;
+}
+
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+  background: #ccc;
+}
+
+.control input:checked ~ .control__indicator {
+  background: rgb(0, 102, 204);
+}
+
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+  background: rgb(0, 102, 204);
+}
+
+.control input:disabled ~ .control__indicator {
+  background: #e6e6e6;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.control__indicator:after {
+  font-family: "icomoon";
+  content: "\e5ca";
+  position: absolute;
+  display: none;
+  font-size: 16px;
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.control input:checked ~ .control__indicator:after {
+  display: block;
+  color: #fff;
+}
+
+.control--checkbox .control__indicator:after {
+  top: 50%;
+  left: 50%;
+  margin-top: -1px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.control--checkbox input:disabled ~ .control__indicator:after {
+  border-color: #7b7b7b;
+}
+
+.control--checkbox input:disabled:checked ~ .control__indicator {
+  background-color: #7e0cf5;
+  opacity: 0.2;
+}
+
+// login and register page styles -- end
+
+/* BASE TEMPLATE CSS */
+#wrapper {
+  display: flex;
+}
+
+#wrapper #content-wrapper {
+  background-color: #f8f9fc;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#wrapper #content-wrapper #content {
+  flex: 1 0 auto;
+}
+
+/** SIDEBAR */
+
+.sidebar-bright .nav-item .nav-link {
+  color: #fff;
+}
+
+/* SIDEBAR */
+
+.color-red {
+  color: red !important;
+}
+
+.ulmenu {
+  height: 100% !important;
+  overflow-y: scroll;
+}
+
+ul.dropdown-menu a:hover {
+  color: rgb(0, 102, 204) !important;;
+  border-color: #fff;
+  background-color: #a5c0e9;
+}
+
+ul.dropdown-menu a {
+  color: rgb(0, 102, 204) !important;;
+  border-color: #fff;
+}
+
+.dotted-line {
+  border: none;
+  border-top: 3px dashed;
+}
+
+.accordian {
+  border: 10px solid #d9d9d9 !important;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+#accordionSidebar.toggled {
+    margin-left: -250px; 
+    transition: margin 0.3s ease;
+  }
+  
+.navbar {
+    margin-bottom: 0px !important;
+}
+
+.bold-hr {
+    border-top: 4px solid white;
+    height: 3px;
+}
+
+.list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

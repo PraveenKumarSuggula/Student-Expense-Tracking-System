@@ -1,0 +1,180 @@
+<div class="container mt-3">
+    <div class="expense-form" style="border: 2px solid #d2caca;">
+        <h2 class="themeColor">{{ 'ENTER_EXPENSE' | translate }}</h2>
+        <p class="themeColor">{{ 'EXPENSE_NOTE' | translate }}</p>
+        <form [formGroup]="expenseForm" (ngSubmit)="submitExpense()">
+            <!-- Name Field -->
+            <input type="text" id="expense-name" formControlName="name" class="form-control"
+                placeholder="* {{ 'EXPENSE_NAME' | translate }}" required>
+            <div *ngIf="expenseForm.get('name')?.touched && expenseForm.get('name')?.invalid" class="text-danger">
+                <small *ngIf="expenseForm.get('name')?.errors?.['required']">{{ 'NAME_REQUIRED' | translate }}</small>
+            </div>
+            <select id="currency" formControlName="currency" class="form-control" style="min-height: 41px;" required>
+                <option value="" disabled selected>* {{ 'SELECT_CURRENCY' | translate }}</option>
+                <option *ngFor="let currency of currencies" [value]="currency.symbol">
+                    {{ currency.symbol }} - {{ currency.name }}
+                </option>
+            </select>
+            <div *ngIf="expenseForm.get('currency')?.touched && expenseForm.get('currency')?.invalid"
+                class="text-danger">
+                <small *ngIf="expenseForm.get('currency')?.errors?.['required']">{{ 'CURRENCY_REQUIRED' | translate
+                    }}</small>
+            </div>
+
+            <!-- Total Amount Field -->
+            <input type="number" id="total-amount" formControlName="totalAmount" class="form-control"
+                placeholder="* {{ 'TOTAL_AMOUNT' | translate }}" required>
+            <div *ngIf="expenseForm.get('totalAmount')?.touched && expenseForm.get('totalAmount')?.invalid"
+                class="text-danger">
+                <small *ngIf="expenseForm.get('totalAmount')?.errors?.['required']">{{ 'AMOUNT_REQUIRED' | translate
+                    }}</small>
+                <small *ngIf="expenseForm.get('totalAmount')?.errors?.['min']">{{ 'AMOUNT_MIN' | translate }}</small>
+            </div>
+
+            <!-- Tax Amount Field -->
+            <input type="number" id="tax-amount" formControlName="taxAmount" class="form-control"
+                placeholder="* {{ 'TAX_AMOUNT' | translate }}" required>
+            <div *ngIf="expenseForm.get('taxAmount')?.touched && expenseForm.get('taxAmount')?.invalid"
+                class="text-danger">
+                <small *ngIf="expenseForm.get('taxAmount')?.errors?.['required']">{{ 'TAX_REQUIRED' | translate
+                    }}</small>
+                <small *ngIf="expenseForm.get('taxAmount')?.errors?.['min']">{{ 'TAX_MIN' | translate }}</small>
+            </div>
+
+            <!-- Category Field -->
+            <select id="expense-category" formControlName="category" class="form-control" required
+                style="height: auto;">
+                <option value="" disabled selected>* {{ 'EXPENSE_CATEGORY' | translate }}</option>
+                <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+                <option value="unassigned">{{ 'UNASSIGNED' | translate }}</option>
+            </select>
+            <div *ngIf="expenseForm.get('category')?.touched && expenseForm.get('category')?.invalid"
+                class="text-danger">
+                <small *ngIf="expenseForm.get('category')?.errors?.['required']">{{ 'CATEGORY_REQUIRED' | translate
+                    }}</small>
+            </div>
+
+            <!-- Date Field -->
+            <div class="form-group">
+                <label for="expense-date" class="placeholder-label text-dark">* {{ 'EXPENSE_DATE' | translate }}</label>
+                <input type="date" id="expense-date" formControlName="date" class="form-control" required>
+                <div *ngIf="expenseForm.get('date')?.touched && expenseForm.get('date')?.invalid" class="text-danger">
+                    <small *ngIf="expenseForm.get('date')?.errors?.['required']">{{ 'DATE_REQUIRED' | translate
+                        }}</small>
+                </div>
+            </div>
+
+            <!-- Payment Type Field -->
+            <select id="payment-type" formControlName="paymentType" class="form-control" required style="height: auto;">
+                <option value="" disabled selected>* {{ 'PAYMENT_TYPE' | translate }}</option>
+                <option value="Credit">{{ 'CREDIT' | translate }}</option>
+                <option value="Debit">{{ 'DEBIT' | translate }}</option>
+                <option value="Cash">{{ 'CASH' | translate }}</option>
+            </select>
+            <div *ngIf="expenseForm.get('paymentType')?.touched && expenseForm.get('paymentType')?.invalid"
+                class="text-danger">
+                <small *ngIf="expenseForm.get('paymentType')?.errors?.['required']">{{ 'PAYMENT_TYPE_REQUIRED' |
+                    translate }}</small>
+            </div>
+
+            <!-- Comments Field (Optional) -->
+            <textarea id="comments" class="mt-2 form-control text-dark" formControlName="comments"
+                placeholder="{{ 'COMMENTS' | translate }}" rows="2"></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary text-white" [disabled]="expenseForm.invalid"
+                style="color: rgb(255, 255, 255); border: none; padding: 10px 20px; border-radius: 5px;">
+                {{ 'SUBMIT_EXPENSE' | translate }}</button>
+        </form>
+    </div>
+
+    <div class="add-category" style="border: 2px solid #d2caca;">
+        <h2 class="themeColor">{{ 'ADD_CATEGORY' | translate }}</h2>
+        <p class="themeColor">{{ 'ADD_REMOVE_CATEGORIES' | translate }}</p>
+
+        <div class="category-list">
+            <span *ngFor="let category of categories" class="category-item themeColor"
+                style="padding: 5px; border-radius: 4px; display: inline-block;">
+                {{ category }}
+                <button class="btn-remove" (click)="removeCategory(category)"
+                    style="color: rgb(255, 255, 255); background-color: rgb(204, 0, 0); border: none; padding: 2px 6px; border-radius: 3px; cursor: pointer;">
+                    X
+                </button>
+            </span>
+
+        </div>
+        <input id="new_category" type="text" placeholder="{{ 'NEW_CATEGORY' | translate }}" [(ngModel)]="newCategory">
+        <button class="add-custom-category themebgColor text-white" (click)="addCategory()"
+            style="border: none; padding: 10px 20px; border-radius: 5px;">
+            {{ 'ADD_CATEGORY' | translate }}</button>
+
+        <div class="button-container">
+            <div class="button-right">
+                <button class="btn themebgColor text-white" (click)="resetExpenseForm()"
+                    style="border: none; padding: 10px 20px; border-radius: 5px;">
+                    {{ 'RESET' | translate }}</button>
+                <button class="btn themebgColor text-white" (click)="saveCategories()"
+                    style="border: none; padding: 10px 20px; border-radius: 5px;">
+                    {{ 'SAVE' | translate }}</button>
+            </div>
+        </div>
+
+        <br>
+        <!-- Monthly Budget Input and Currency Dropdown -->
+        <label for="monthly-budget" class="themeColor">{{ 'SET_MONTHLY_BUDGET' | translate }}</label>
+
+        <div class="budget-input-group" style="display: flex; align-items: center;">
+            <input type="number" id="monthly-budget" [(ngModel)]="monthlyBudgetValue"
+                placeholder="{{ 'ENTER_BUDGET' | translate }}" required
+                style="flex: 1; padding: 0.5em; border: 1px solid #ccc;">
+
+            <label for="currency-select" class="currencylabel">Currency</label>
+            <select id="currency-select" [(ngModel)]="selectedCurrencyValue" class="btn-currency themebgColor text-white"
+                style="margin-left: 10px;border-radius: 5px;">
+                <option *ngFor="let currency of currencies" [ngValue]="currency">{{ currency.symbol }} - {{
+                    currency.name }}</option>
+            </select>
+
+            <!-- Save/Update button -->
+            <button class="btn themebgColor text-white" (click)="saveBudget()"
+                style="margin: 0px 0px 15px 10px; border-radius: 5px;">
+                {{ 'SAVE_BUDGET' | translate }}</button>
+        </div>
+
+        <!-- Display Current Budget with Currency -->
+        <h3 class="current-budget font-weight-bold themeColor" style="font-size: 20px;">
+            {{ 'CURRENT_BUDGET' | translate }}: {{ selectedCurrencyValue.symbol }} {{ (monthlyBudgetValue ||
+            0).toFixed(2) }}
+        </h3>
+
+        <!-- Display Spending Limit -->
+        <p [ngClass]="{
+        'text-success': spendingPercentage < 50,
+        'text-warning': spendingPercentage >= 50 && spendingPercentage < 80,
+        'text-danger': spendingPercentage >= 80 }" class="spending-limit font-weight-bold" style="font-size: 15px;">
+            {{ 'TOTAL_SPEND_AMOUNT' | translate }}: {{selectedCurrencyValue.symbol}} {{totalSpent.toFixed(2)}}
+            <br>
+            {{ 'TOTAL_SPENT_PERCENT' | translate }}: {{ spendingPercentage.toFixed(2) }}%
+        </p>
+
+        <!-- Warning and Danger Messages -->
+        <div *ngIf="spendingPercentage >= 80" class="alert alert-danger">
+            {{ 'DANGER_SPENDING_LIMIT' | translate }}
+        </div>
+        <div *ngIf="spendingPercentage >= 50 && spendingPercentage < 80" class="alert alert-warning">
+            {{ 'WARNING_SPENDING_LIMIT' | translate }}
+        </div>
+        <div *ngIf="spendingPercentage < 50" class="alert alert-success">
+            {{ 'SPENDING_GOOD' | translate }}
+        </div>
+
+        <div class="button-container">
+            <button class="btn themebgColor text-white" routerLink="/import-expenses"
+                style="border: none; padding: 10px 20px; border-radius: 5px;">
+                {{ 'IMPORT_EXPENSES_BTN' | translate }}</button>
+            <button class="btn themebgColor text-white" routerLink="/view-expenses"
+                style="border: none; padding: 10px 20px; border-radius: 5px;">
+                {{ 'VIEW_EXPENSES' | translate | titlecase}}</button>
+        </div>
+    </div>
+</div>

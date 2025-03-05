@@ -1,0 +1,91 @@
+<div class="container mt-4">
+  <div class="header mb-0">
+    <h2 class="text-left expense-header" class="themeColor">Expense Reports</h2>
+    <div class="button-container">
+      <button class="btn text-white table-padding" routerLink="/addexpense"><em class="fa fa-plus"></em> Add Expense</button>
+      <button class="btn text-white table-padding" routerLink="/visualize"><em class="fa fa-chart-bar"></em> Visualize</button>
+    </div>
+  </div>
+
+  <table class="table table-bordered expense-table mt-0" *ngIf="expenses.length > 0; else noExpensesTemplate">
+    <thead>
+      <tr>
+        <th class="text-white themebgColor table-padding">Name</th>
+        <th class="text-white themebgColor table-padding">Currency</th>
+        <th class="text-white themebgColor table-padding">Total Amount</th>
+        <th class="text-white themebgColor table-padding">Tax Amount</th>
+        <th class="text-white themebgColor table-padding">Date</th>
+        <th class="text-white themebgColor table-padding">Category</th>
+        <th class="text-white themebgColor table-padding">Payment Type</th>
+        <th class="text-white themebgColor table-padding">Comments</th>
+        <th class="text-white themebgColor table-padding">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let expense of paginatedExpenses">
+        <td>{{ expense.name }}</td>
+        <td>{{ expense.currency }}</td>
+        <td>{{ expense.totalAmount }}</td>
+        <td>{{ expense.taxAmount }}</td>
+        <td>{{ expense.date | date: 'yyyy-MM-dd' }}</td>
+        <td>{{ expense.category }}</td>
+        <td>{{ expense.paymentType }}</td>
+        <td>{{ expense.comments || 'No comments' }}</td>
+        <td>
+          <em class="fa-solid fa-trash-can" (click)="confirmDelete(expense.id)" style="color: red; font-size: 18px;"></em>     
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination Controls -->
+  <nav class="pagination-controls mt-0" aria-label="Pagination">
+    <button 
+      (click)="previousPage()" 
+      [disabled]="currentPage === 1" 
+      style="color: rgb(255, 255, 255); background-color: rgb(0, 102, 204); border: none; padding: 10px 20px; border-radius: 5px;">
+      Previous
+    </button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button 
+      (click)="nextPage()" 
+      [disabled]="currentPage === totalPages" 
+      style="color: rgb(255, 255, 255); background-color: rgb(0, 102, 204); border: none; padding: 10px 20px; border-radius: 5px;">
+      Next
+    </button>
+  </nav>
+
+  <div class="mt-4 download-button-container" *ngIf="expenses.length > 0;">
+    <button class="btn" (click)="downloadExpenses()" style="color: rgb(255, 255, 255); background-color: rgb(0, 102, 204); border: none; padding: 10px 20px; border-radius: 5px;">
+      <em class="fa fa-solid fa-download" style="color: #ffffff;"></em> Download Expense
+    </button>
+    <button class="btn ml-4" (click)="shareExpenses()" style="color: rgb(255, 255, 255); background-color: rgb(0, 102, 204); border: none; padding: 10px 20px; border-radius: 5px;">
+      <em class="fa fa-solid fa-share" style="color: #ffffff;"></em> Share Expense
+    </button>
+  </div>
+
+  <ng-template #noExpensesTemplate>
+    <div class="alert alert-info text-center themebgColor text-white">
+      No expenses found
+    </div>
+  </ng-template>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="deleteModalLabel">Confirm Deletion</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this expense?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="color: rgb(255, 255, 255); background-color: rgb(0, 102, 204); border: none; padding: 10px 20px; border-radius: 5px;">Cancel</button>
+        <button type="button" class="btn btn-danger" (click)="deleteConfirmed()" style="color: rgb(255, 255, 255); background-color: rgb(0, 102, 204); border: none; padding: 10px 20px; border-radius: 5px;">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

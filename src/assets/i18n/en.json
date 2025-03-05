@@ -1,0 +1,99 @@
+{
+    "WELCOME": "Welcome",
+    "NO_EXPENSES": "No Expenses Data",
+    "ADD_EXPENSE": "Please enter an expense !!",
+    "ENTER_EXPENSE": "Enter Expense",
+    "EXPENSE_NOTE": "Fields marked with * are mandatory.",
+    "EXPENSE_NAME": "Expense Name",
+    "NAME_REQUIRED": "Expense Name is required.",
+    "SELECT_CURRENCY": "Select Currency",
+    "CURRENCY_TYPE": "Currency Type",
+    "ACCEPTABLE_FORMAT": "Acceptable formats: USD, Euro, GBP, INR.",
+    "CURRENCY_REQUIRED": "Currency is required.",
+    "TOTAL_AMOUNT": "Total Amount",
+    "AMOUNT_REQUIRED": "Total Amount is required.",
+    "AMOUNT_MIN": "Total Amount must be greater than 0.",
+    "TAX_AMOUNT": "Tax Amount",
+    "TAX_REQUIRED": "Tax Amount is required.",
+    "TAX_MIN": "Tax Amount must be 0 or more.",
+    "EXPENSE_CATEGORY": "Expense Category",
+    "DEFAULT_UNASSIGNED": "Default: Unassigned",
+    "CATEGORY_REQUIRED": "Category is required.",
+    "EXPENSE_DATE": "Expense Date",
+    "REQUIRED_FORMAT": "Required format: MM/DD/YYYY.",
+    "PAYMENT_TYPE": "Payment Type",
+    "DEFAULT_DEBIT": "Default: Debit",
+    "VALID_VALUES": "Valid values: Debit, Credit, or Cash.",
+    "CREDIT": "Credit",
+    "DEBIT": "Debit",
+    "CASH": "Cash",
+    "PAYMENT_TYPE_REQUIRED": "Payment Type is required.",
+    "COMMENTS": "Comments",
+    "SUBMIT_EXPENSE": "Submit Expense",
+    "ADD_CATEGORY": "Add Category",
+    "ADD_REMOVE_CATEGORIES": "Add or remove custom categories.",
+    "NEW_CATEGORY": "New Category",
+    "RESET": "Reset",
+    "SAVE": "Save",
+    "SET_MONTHLY_BUDGET": "Set Monthly Budget",
+    "ENTER_BUDGET": "Enter Budget",
+    "SAVE_BUDGET": "Save Budget",
+    "CURRENT_BUDGET": "Current Monthly Budget",
+    "TOTAL_SPEND_AMOUNT": "Total Spent Amount",
+    "TOTAL_SPENT_PERCENT": "Total Spent Percentage",
+    "DANGER_SPENDING_LIMIT": "Warning: You are over 80% of your budget.",
+    "WARNING_SPENDING_LIMIT": "Caution: You have spent over 50% of your budget.",
+    "SPENDING_GOOD": "You are within your spending limit.",
+    "IMPORT_EXPENSES": "Import Expenses from CSV",
+    "IMPORT_EXPENSES_BTN": "Import Expenses",
+    "CSV_FORMAT_HINT": "Required CSV Format:",
+    "FIELD": "Field",
+    "FIELD_HEADER": "Field Header",
+    "FORMAT_REQUIREMENT": "Format/Requirement",
+    "REQUIRED_CSV_FORMAT": {
+        "EXPENSE_NAME": {
+            "NAME": "Expense Name",
+            "NAME_HEADER": "name",
+            "NAME_REQUIRED": "Expense Name is required."
+        },
+        "CURRENCY_TYPE": {
+            "CURRENCY_HEADER": "currency",
+            "CURRENCY_REQUIRED": "Currency is required. Acceptable format: USD, Euro, GBP, INR."
+        },
+        "TOTAL_AMOUNT": {
+            "TOTAL_AMOUNT_HEADER": "totalAmount",
+            "TOTAL_AMOUNT_REQUIRED": "Total Amount is required."
+        },
+        "TAX_AMOUNT": {
+            "TAX_HEADER": "taxAmount",
+            "TAX_REQUIRED": "Tax Amount is required."
+        },
+        "EXPENSE_CATEGORY": {
+            "CATEGORY_HEADER": "category",
+            "CATEGORY_OPTIONAL": "Not required. Defaults to 'Unassigned'."
+        },
+        "DATE": {
+            "DATE_HEADER": "date",
+            "DATE_FORMAT": "Required format: MM/DD/YYYY."
+        },
+        "PAYMENT_TYPE": {
+            "PAYMENT_TYPE_HEADER": "paymentType",
+            "PAYMENT_TYPE_OPTIONAL": "Not required. Defaults to 'Debit'. Valid values: Debit, Credit, or Cash."
+        },
+        "COMMENTS": {
+            "COMMENTS_HEADER": "comments",
+            "COMMENTS_OPTIONAL": "Not required."
+        },
+        "SELECT_CSV_FILE": "Select CSV File:",
+        "NO_FILE_CHOSEN": "No file chosen."
+    },
+    "SELECT_CSV_FILE": "Select CSV File:",
+    "SAVE_IMPORTED_EXPENSES": "Save Imported Expenses",
+    "NOT_REQUIRED": "Not Required",
+    "HOME": "HOME",
+    "VIEW_EXPENSES": "VIEW EXPENSES",
+    "ADD_EXPENSES": "ADD EXPENSES",
+    "LOGOUT": "LOGOUT",
+    "ADD_REMINDERS": "ADD REMINDERS",
+    "FINANCIAL_ADVICE": "FINANCIAL ADVICES"
+}

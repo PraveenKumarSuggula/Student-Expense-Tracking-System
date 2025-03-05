@@ -1,0 +1,23 @@
+.container-class-1 {
+    display: flex;
+    justify-content: center;  
+    align-items: center;   
+    height: 75vh;          
+}
+
+.class-2 {
+    max-width: 200px; 
+    margin-right: 20px; 
+}
+
+.class-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    text-align: center;       
+}
+
+img.class-2 {
+    width: 100%;     
+    height: auto;    
+}

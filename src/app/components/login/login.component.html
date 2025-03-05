@@ -1,0 +1,67 @@
+<div class="container-fluid">
+    <div class="row">
+            
+        <!-- Left Side - Image -->
+        <div class="col-md-6 d-none d-md-flex bg order-1">
+            <p style="top: -15%; position: absolute;" class="themeColor">
+                Demo User: 
+                <span id="demoUsername">praveenkumar.suggula0@gmail.com</span> 
+                <i class="fa fa-copy cursor-pointer" (click)="copyText('demoUsername')"></i>
+                <br> 
+                Password: 
+                <span id="demoPassword">praveenn</span>
+                <i class="fa fa-copy cursor-pointer" (click)="copyText('demoPassword')"></i>
+            </p>
+        </div>
+
+        <!-- Right Side - Login Form -->
+        <div class="col-md-5 order-2" style="margin-left: 5%;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <h2 class="headertxt themeColor">
+                            Student Expense
+                            <span class="cursor" routerLink="/dashboard">Tracker</span>
+                        </h2>
+
+                        <h4 class="text-left mb-3 headertxt">Login</h4>
+
+                        <form [formGroup]="loginForm">
+                            <div class="form-group position-relative">
+                                <label for="username" class="themeColor">Username</label>
+                                <input type="text" class="form-control" formControlName="username"
+                                    placeholder="Enter your email address" id="username">
+                                <div class="text-danger" *ngIf="(formvalid) || (loginForm.controls['username'].dirty)">
+                                    <div *ngIf="loginForm.controls['username'].hasError('required')">
+                                        *Required username
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group position-relative">
+                                <label for="password" class="themeColor">Password</label>
+                                <input [type]="passwordType" formControlName="password" class="form-control"
+                                    placeholder="Enter your Password" id="password">
+                                <span *ngIf="passwordType == 'Text'" (click)="passwordType = 'Password'"
+                                    class="fa fa-eye showPassword"></span>
+                                <span *ngIf="passwordType == 'Password'" (click)="passwordType = 'Text'"
+                                    class="fa fa-eye-slash showPassword"></span>
+                                <div class="text-danger" *ngIf="(formvalid) || (loginForm.controls['password'].dirty)">
+                                    <div *ngIf="loginForm.controls['password'].hasError('required')">
+                                        *Required password
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex mb-3 align-items-center">
+                                <span class="small text-primary cursor" routerLink="/register">Register Now?</span>
+                            </div>
+
+                            <input type="submit" value="Log In" class="btn btn-primary btn-block text-white" (click)="login()" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

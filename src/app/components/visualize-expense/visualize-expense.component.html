@@ -1,0 +1,91 @@
+<div class="container mt-4">
+  <div class="header">
+    <h2 class="text-left expense-header" class="themeColor">Expense Visualization</h2>
+    <div class="button-container">
+      <button class="btn" routerLink="/addexpense" style="color: rgb(255, 255, 255); background-color: rgb(0, 102, 204); border: none; padding: 10px 20px; border-radius: 5px;">
+        <em class="fa fa-plus"></em> Add Expense
+      </button>
+      <button class="btn" routerLink="/view-expenses" style="color: rgb(255, 255, 255); background-color: rgb(0, 102, 204); border: none; padding: 10px 20px; border-radius: 5px;">
+        <em class="fa fa-table"></em> View Expenses
+      </button>
+    </div>
+  </div>
+
+  <div class="scrollable-container">
+    <div class="dropdown-container">
+      <label for="timePeriod">Select Time Period:</label>
+      <select id="timePeriod" (change)="onTimePeriodChange($event)">
+        <option value="total">Total Data</option>
+        <option value="today">Today</option>
+        <option value="month">Current Month</option>
+        <option value="year">Current Year</option>
+      </select>
+    </div>
+    
+    <div *ngIf="(filteredExpenses.length > 0 ); else noExpensesTemplate">
+      <div class="summary-and-trends-container">
+        <div class="summary-charts mt-5">
+          <div class="chart-container">
+            <highcharts-chart [Highcharts]="Highcharts" [options]="barChartOptions"
+              style="width: 100%; height: 300px; display: block;"></highcharts-chart>
+          </div>
+          <div class="chart-container">
+            <highcharts-chart [Highcharts]="Highcharts" [options]="pieChartOptions"
+              style="width: 100%; height: 300px; display: block;"></highcharts-chart>
+          </div>
+        </div>
+  
+        <div class="trends-container">
+          <highcharts-chart [Highcharts]="Highcharts" [options]="lineChartOptions"
+            style="width: 100%; height: 300px; display: block;"></highcharts-chart>
+        </div>
+      </div>
+  
+      <div class="summary-charts mt-5">
+        <div class="chart-container">
+          <highcharts-chart [Highcharts]="Highcharts" [options]="stackedBarChartOptions"
+            style="width: 100%; height: 300px; display: block;"></highcharts-chart>
+        </div>
+        <div class="chart-container">
+          <highcharts-chart [Highcharts]="Highcharts" [options]="movingAverageLineOptions"
+            style="width: 100%; height: 300px; display: block;"></highcharts-chart>
+        </div>
+      </div>
+  
+      <div class="side-by-side mt-5">
+        <div class="chart-container">
+          <highcharts-chart [Highcharts]="Highcharts" [options]="taxPieChartOptions"
+            style="width: 100%; height: 300px; display: block;"></highcharts-chart>
+        </div>
+        <div class="table-container">
+          <h5 class="table-heading mx-4">Expense Summary By Expense Type</h5>
+          <table class="styled-table mt-0 mx-0">
+            <thead>
+              <tr>
+                <th class="text-white themebgColor">Expense Type</th>
+                <th class="text-white themebgColor">Total Amount</th>
+                <th class="text-white themebgColor">Tax Amount</th>
+                <th class="text-white themebgColor">No. of Expenses Recorded</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let summary of summaryData">
+                <td>{{ summary.expenseType }}</td>
+                <td>{{ summary.totalAmount | currency }}</td>
+                <td>{{ summary.taxAmount | currency }}</td>
+                <td>{{ summary.expenseCount }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #noExpensesTemplate>
+      <div class="alert alert-info text-center">
+        No expenses found to visualize.
+      </div>
+    </ng-template>
+    
+  </div>
+</div>

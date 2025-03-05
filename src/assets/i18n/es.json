@@ -1,0 +1,99 @@
+{
+    "WELCOME": "Bienvenido",
+    "NO_EXPENSES": "No hay datos de gastos",
+    "ADD_EXPENSE": "¡Por favor, ingrese un gasto!",
+    "ENTER_EXPENSE": "Ingresar Gasto",
+    "EXPENSE_NOTE": "Los campos marcados con * son obligatorios.",
+    "EXPENSE_NAME": "Nombre del Gasto",
+    "NAME_REQUIRED": "El nombre del gasto es obligatorio.",
+    "SELECT_CURRENCY": "Seleccionar Moneda",
+    "CURRENCY_TYPE": "Tipo de Moneda",
+    "ACCEPTABLE_FORMAT": "Formatos aceptables: USD, Euro, GBP, INR.",
+    "CURRENCY_REQUIRED": "La moneda es obligatoria.",
+    "TOTAL_AMOUNT": "Monto Total",
+    "AMOUNT_REQUIRED": "El monto total es obligatorio.",
+    "AMOUNT_MIN": "El monto total debe ser mayor que 0.",
+    "TAX_AMOUNT": "Monto de Impuesto",
+    "TAX_REQUIRED": "El monto de impuesto es obligatorio.",
+    "TAX_MIN": "El monto de impuesto debe ser 0 o más.",
+    "EXPENSE_CATEGORY": "Categoría de Gasto",
+    "DEFAULT_UNASSIGNED": "Por defecto: Sin asignar",
+    "CATEGORY_REQUIRED": "La categoría es obligatoria.",
+    "EXPENSE_DATE": "Fecha de Gasto",
+    "REQUIRED_FORMAT": "Formato requerido: MM/DD/YYYY.",
+    "PAYMENT_TYPE": "Tipo de Pago",
+    "DEFAULT_DEBIT": "Por defecto: Débito",
+    "VALID_VALUES": "Valores válidos: Débito, Crédito o Efectivo.",
+    "CREDIT": "Crédito",
+    "DEBIT": "Débito",
+    "CASH": "Efectivo",
+    "PAYMENT_TYPE_REQUIRED": "El tipo de pago es obligatorio.",
+    "COMMENTS": "Comentarios",
+    "SUBMIT_EXPENSE": "Enviar Gasto",
+    "ADD_CATEGORY": "Agregar Categoría",
+    "ADD_REMOVE_CATEGORIES": "Agregar o eliminar categorías personalizadas.",
+    "NEW_CATEGORY": "Nueva Categoría",
+    "RESET": "Reiniciar",
+    "SAVE": "Guardar",
+    "SET_MONTHLY_BUDGET": "Establecer Presupuesto Mensual",
+    "ENTER_BUDGET": "Ingresar Presupuesto",
+    "SAVE_BUDGET": "Guardar Presupuesto",
+    "CURRENT_BUDGET": "Presupuesto Mensual Actual",
+    "TOTAL_SPEND_AMOUNT": "Monto Total Gastado",
+    "TOTAL_SPENT_PERCENT": "Porcentaje Total Gastado",
+    "DANGER_SPENDING_LIMIT": "Advertencia: Ha superado el 80% de su presupuesto.",
+    "WARNING_SPENDING_LIMIT": "Precaución: Ha gastado más del 50% de su presupuesto.",
+    "SPENDING_GOOD": "Está dentro de su límite de gasto.",
+    "IMPORT_EXPENSES": "Importar Gastos desde CSV",
+    "IMPORT_EXPENSES_BTN": "Importar Gastos",
+    "CSV_FORMAT_HINT": "Formato CSV Requerido:",
+    "FIELD": "Campo",
+    "FIELD_HEADER": "Encabezado del Campo",
+    "FORMAT_REQUIREMENT": "Formato/Requisito",
+    "REQUIRED_CSV_FORMAT": {
+        "EXPENSE_NAME": {
+            "NAME": "Nombre del Gasto",
+            "NAME_HEADER": "name",
+            "NAME_REQUIRED": "El nombre del gasto es obligatorio."
+        },
+        "CURRENCY_TYPE": {
+            "CURRENCY_HEADER": "currency",
+            "CURRENCY_REQUIRED": "La moneda es obligatoria. Formato aceptable: USD, Euro, GBP, INR."
+        },
+        "TOTAL_AMOUNT": {
+            "TOTAL_AMOUNT_HEADER": "totalAmount",
+            "TOTAL_AMOUNT_REQUIRED": "El monto total es obligatorio."
+        },
+        "TAX_AMOUNT": {
+            "TAX_HEADER": "taxAmount",
+            "TAX_REQUIRED": "El monto de impuesto es obligatorio."
+        },
+        "EXPENSE_CATEGORY": {
+            "CATEGORY_HEADER": "category",
+            "CATEGORY_OPTIONAL": "No requerido. Por defecto 'Sin asignar'."
+        },
+        "DATE": {
+            "DATE_HEADER": "date",
+            "DATE_FORMAT": "Formato requerido: MM/DD/YYYY."
+        },
+        "PAYMENT_TYPE": {
+            "PAYMENT_TYPE_HEADER": "paymentType",
+            "PAYMENT_TYPE_OPTIONAL": "No requerido. Por defecto 'Débito'. Valores válidos: Débito, Crédito o Efectivo."
+        },
+        "COMMENTS": {
+            "COMMENTS_HEADER": "comments",
+            "COMMENTS_OPTIONAL": "No requerido."
+        },
+        "SELECT_CSV_FILE": "Seleccionar Archivo CSV:",
+        "NO_FILE_CHOSEN": "No hay archivo seleccionado."
+    },
+    "SELECT_CSV_FILE": "Seleccionar Archivo CSV:",
+    "SAVE_IMPORTED_EXPENSES": "Guardar Gastos Importados",
+    "NOT_REQUIRED": "No Requerido",
+    "HOME": "INICIO",
+    "VIEW_EXPENSES": "VER GASTOS",
+    "ADD_EXPENSES": "AGREGAR GASTO",
+    "LOGOUT": "CERRAR SESIÓN",
+    "ADD_REMINDERS": "AÑADIR RECORDATORIOS",
+    "FINANCIAL_ADVICE": "CONSEJOS FINANCIEROS"
+}

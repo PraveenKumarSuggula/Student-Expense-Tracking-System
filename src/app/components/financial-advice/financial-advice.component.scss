@@ -1,0 +1,38 @@
+.financial-advice-container {
+    max-width: 1000px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    float: right;
+    max-height: 450px; /* Set the maximum height */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
+  .content-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .content-item h3 {
+    margin: 0;
+    color: #333;
+  }
+  
+  .content-item p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .content-item a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+  }
